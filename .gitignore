@@ -1,0 +1,10 @@
+CMakeCache.txt
+Makefile
+CMakeFiles
+cmake_install.cmake
+src/hypar3/config.h
+*.so
+*.o
+*.swp
+*.swo
+*~
