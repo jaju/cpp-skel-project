@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 2.8)
+project(hypar3 C CXX)
+include(CheckIncludeFiles)
+include(CheckFunctionExists)
+set(SRC_DIR ${CMAKE_SOURCE_DIR}/src)
+set(HYPAR3_SRC_DIR ${SRC_DIR}/hypar3)
+include_directories(${SRC_DIR})
+configure_file(${HYPAR3_SRC_DIR}/config.h.in
+	${HYPAR3_SRC_DIR}/config.h)
+add_subdirectory(src)

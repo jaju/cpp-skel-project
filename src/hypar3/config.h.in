@@ -1,0 +1,3 @@
+#pragma once
+#cmakedefine DEBUG
+#cmakedefine HAVE_MMAP
