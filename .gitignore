@@ -8,4 +8,4 @@ src/hypar3/config.h
 *.swp
 *.swo
 *~
-*.cmake
+src/**/*.cmake

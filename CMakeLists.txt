@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 project(hypar3 C CXX)
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 include(CheckIncludeFiles)
 include(CheckFunctionExists)
 set(SRC_DIR ${CMAKE_SOURCE_DIR}/src)
