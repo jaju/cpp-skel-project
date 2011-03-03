@@ -12,3 +12,6 @@ src/*.cmake
 test/*.cmake
 .cproject
 .project
+CTestTestfile.cmake
+Testing/
+install_manifest.txt
