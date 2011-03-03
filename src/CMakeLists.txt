@@ -1,2 +1,20 @@
-add_subdirectory(hypar3)
-add_subdirectory(test)
+set(LIB_NAME hypar3)
+set(LIB_SRCS
+	localdefs.cpp
+	)
+
+option(DEBUG "Build the project with debug calls" ON)
+check_include_files(list HAVE_CXX_LIST)
+check_function_exists(mmap HAVE_MMAP)
+
+add_library(${LIB_NAME} SHARED ${LIB_SRCS})
+
+install(FILES
+	localdefs.hpp
+	DESTINATION ${CMAKE_INSTALL_PREFIX}/include/hypar3
+	PERMISSIONS OWNER_READ OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
+
+install(FILES
+	lib${LIB_NAME}.so
+	DESTINATION ${CMAKE_INSTALL_PREFIX}/lib
+	PERMISSIONS OWNER_READ OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)

@@ -4,8 +4,9 @@ set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 include(CheckIncludeFiles)
 include(CheckFunctionExists)
 set(SRC_DIR ${CMAKE_SOURCE_DIR}/src)
-set(HYPAR3_SRC_DIR ${SRC_DIR}/hypar3)
+set(TEST_DIR ${CMAKE_SOURCE_DIR}/test)
 include_directories(${SRC_DIR})
-configure_file(${HYPAR3_SRC_DIR}/config.h.in
-	${HYPAR3_SRC_DIR}/config.h)
+configure_file(${SRC_DIR}/config.h.in
+    ${SRC_DIR}/config.h)
 add_subdirectory(src)
+add_subdirectory(test)
