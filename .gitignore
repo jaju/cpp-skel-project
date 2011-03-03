@@ -15,3 +15,5 @@ test/*.cmake
 CTestTestfile.cmake
 Testing/
 install_manifest.txt
+coverage/
+gmon.out

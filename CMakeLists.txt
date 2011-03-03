@@ -13,12 +13,15 @@ include(CheckFunctionExists)
 include_directories(${SRC_DIR})
 configure_file(${SRC_DIR}/config.h.in
     ${SRC_DIR}/config.h)
+
+option(BUILD_WITH_COVERAGE "Build the project with code coverage on" OFF)
+if(BUILD_WITH_COVERAGE)
+    SET(COMPILER_COVERAGE_FLAGS "-pg -O0 -Wall -fprofile-arcs -ftest-coverage")
+    SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${COMPILER_COVERAGE_FLAGS}")
+    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COMPILER_COVERAGE_FLAGS}")
+    SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fprofile-arcs -ftest-coverage -lgcov")
+    include(${CMAKE_SOURCE_DIR}/cmake/lcov.cmake)
+endif(BUILD_WITH_COVERAGE)
+
 add_subdirectory(src)
 add_subdirectory(test)
-
-if(BUILD_WITH_COVERAGE)
-    SET(CMAKE_C_FLAGS "-g -O0 -Wall -fprofile-arcs -ftest-coverage")
-    SET(CMAKE_CXX_FLAGS "-g -O0 -Wall -fprofile-arcs -ftest-coverage")
-    SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fprofile-arcs -ftest-coverage -lgcov")
-    include(${CMAKE_SOURCE_DIR}/cmake/lcov.cmake})
-endif(BUILD_WITH_COVERAGE)
