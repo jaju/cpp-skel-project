@@ -1,15 +1,10 @@
 /*
- * Copyright 2004 Ravindra Jaju (jaju [AT] msync org)
- */
-
-/*
- * This file is part of the HyParSuite and usage is governed by the License
- * included with the source-code
+ * Copyright 2011 Ravindra Jaju (jaju [AT] msync org)
  */
 
 #pragma once
 #ifdef HAVE_CONFIG_H
-# include "hypar/config.h"
+# include "config.h"
 #endif
 
 #ifdef __cplusplus

@@ -1,3 +1,6 @@
+#
+# Copyright 2011 Ravindra Jaju (jaju [AT] msync org)
+#
 set(LIB_NAME hypar3)
 file(GLOB_RECURSE HEADER_FILES "*.hpp" "*.h")
 file(GLOB_RECURSE SRC_FILES "*.cpp")
