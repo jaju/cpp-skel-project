@@ -6,7 +6,7 @@ find_package(GMock REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
 include_directories(${GOOGLEMOCK_INCLUDE_DIR})
 
-add_executable(mmaptest mmaptest.cpp)
-target_link_libraries(mmaptest ${GTEST_BOTH_LIBRARIES} ${GOOGLEMOCK_LIBRARIES} pthread)
+add_executable(dummytest dummytest.cpp)
+target_link_libraries(dummytest ${GTEST_BOTH_LIBRARIES} ${GOOGLEMOCK_LIBRARIES} pthread)
 
-add_test(AllMmapTests mmaptest)
+add_test(DummyTests dummytest)

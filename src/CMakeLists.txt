@@ -7,7 +7,7 @@ file(GLOB_RECURSE SRC_FILES "*.cpp")
 
 option(DEBUG "Build the project with debug calls" ON)
 check_include_files(list HAVE_CXX_LIST)
-check_function_exists(mmap HAVE_MMAP)
+check_function_exists(exit HAVE_EXIT)
 
 add_library(${LIB_NAME} SHARED ${SRC_FILES})
 

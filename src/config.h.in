@@ -3,4 +3,5 @@
  */
 #pragma once
 #cmakedefine DEBUG
-#cmakedefine HAVE_MMAP
+#cmakedefine HAVE_CXX_LIST
+#cmakedefine HAVE_EXIT
