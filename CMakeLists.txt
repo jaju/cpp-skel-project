@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 2.8)
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 ###########################################################
 ###########################################################
-project(skel_project C CXX)
+project(cpp_skel_project C CXX)
 set(SRC_DIR ${CMAKE_SOURCE_DIR}/src)
 set(TEST_DIR ${CMAKE_SOURCE_DIR}/test)
 enable_testing()

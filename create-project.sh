@@ -12,7 +12,7 @@ updatename() {
   done
 }
 
-SKELNAME=skel_project
+SKELNAME=cpp_skel_project
 if [ "x$2" = "x" ]; then
   usage
   exit 1

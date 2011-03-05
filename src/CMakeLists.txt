@@ -1,7 +1,7 @@
 #
 # Copyright 2011 Ravindra Jaju (jaju [AT] msync org)
 #
-set(LIB_NAME skel_project)
+set(LIB_NAME cpp_skel_project)
 file(GLOB_RECURSE HEADER_FILES "*.h" "*.hpp" "*.hh" "*.H")
 file(GLOB_RECURSE SRC_FILES "*.c" "*.cpp" "*.cc" "*.C")
 
@@ -18,6 +18,6 @@ install(FILES
 
 install(FILES
     ${HEADER_FILES}
-	DESTINATION ${CMAKE_INSTALL_PREFIX}/include/skel_project
+	DESTINATION ${CMAKE_INSTALL_PREFIX}/include/cpp_skel_project
 	PERMISSIONS OWNER_READ OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
 
