@@ -4,12 +4,20 @@ usage() {
   echo "Usage: $0 <project-name> <base-directory>"
 }
 
+cleanup() {
+  echo "Removing .git directory and copy of this ($0) script..."
+  cd $FINALDESTINATION && rm -rf .git && rm -rf `basename $0` && cd -
+}
+
 updatename() {
+  echo "Updating files - renaming all occurences of $SKELNAME with $PROJECTNAME..."
+  cd $FINALDESTINATION
   tempfile=`tempfile`
   for f in `find . -type f`; do
     cat $f | sed s/$SKELNAME/$PROJECTNAME/g > $tempfile
     mv $tempfile $f
   done
+  cd -
 }
 
 SKELNAME=cpp_skel_project
@@ -29,4 +37,5 @@ fi
 FINALDESTINATION="$DESTDIR/$PROJECTNAME"
 mkdir -p "$FINALDESTINATION"
 
-cp -af * $FINALDESTINATION && cd $FINALDESTINATION && rm -rf .git && updatename
+echo "Creating copy of skeleton at $FINALDESTINATION..."
+rsync -cavzu ./ $FINALDESTINATION/ &>/dev/null && cleanup && updatename
