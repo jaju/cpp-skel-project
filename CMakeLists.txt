@@ -17,6 +17,7 @@ include_directories(${SRC_DIR})
 configure_file(${SRC_DIR}/config.h.in
     ${SRC_DIR}/config.h)
 
+set(LIB_NAME cpp_skel_project)
 option(BUILD_WITH_COVERAGE "Build the project with code coverage on" OFF)
 if(BUILD_WITH_COVERAGE)
     SET(COMPILER_COVERAGE_FLAGS "-pg -O0 -Wall -fprofile-arcs -ftest-coverage")

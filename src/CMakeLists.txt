@@ -1,9 +1,8 @@
 #
 # Copyright 2011 Ravindra Jaju (jaju [AT] msync org)
 #
-set(LIB_NAME cpp_skel_project)
-file(GLOB_RECURSE HEADER_FILES "*.h" "*.hpp" "*.hh" "*.H")
-file(GLOB_RECURSE SRC_FILES "*.c" "*.cpp" "*.cc" "*.C")
+file(GLOB_RECURSE HEADER_FILES "*.h" "*.hpp" "*.hh")
+file(GLOB_RECURSE SRC_FILES "*.c" "*.cpp" "*.cc")
 
 option(DEBUG "Build the project with debug calls" ON)
 check_include_files(list HAVE_CXX_LIST)
