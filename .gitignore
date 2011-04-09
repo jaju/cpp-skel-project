@@ -17,3 +17,4 @@ Testing/
 install_manifest.txt
 coverage/
 gmon.out
+test/*test
